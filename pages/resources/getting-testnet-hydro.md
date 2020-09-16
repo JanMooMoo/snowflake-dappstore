@@ -1,1 +1,0 @@
-# Getting testnet Hydro
