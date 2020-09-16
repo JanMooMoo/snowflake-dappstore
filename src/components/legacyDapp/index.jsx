@@ -29,6 +29,10 @@ import {
   Oxide,
 } from '../../legacy/Rinkeby/0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f/index';
 
+import {
+  Tester,
+} from '../../legacy/Rinkeby/test-1/index';
+
 function LegacyDapp(props) {
   const user = useContext(SnowflakeContext);
 

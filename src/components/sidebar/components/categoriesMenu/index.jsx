@@ -17,6 +17,7 @@ import {
   IoIosPeople,
   IoIosCalculator,
   IoIosCog,
+  IoMdBuild
 } from 'react-icons/io';
 
 import categoriesJson from '../../../../common/config/categories.json';
@@ -30,6 +31,7 @@ function CategoriesMenu() {
     IoIosPeople,
     IoIosCalculator,
     IoIosCog,
+    IoMdBuild,
   };
 
   return (

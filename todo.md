@@ -29,4 +29,3 @@ B) Change links
 5. https://github.com/HydroBlockchain/hcdp/issues/228
 
 # add images for the dApps under construction
-# 
