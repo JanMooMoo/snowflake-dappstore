@@ -33,5 +33,10 @@
     "name": "Other",
     "description": "Lorum ipsum dolor sit amet.",
     "icon": "IoIosCog"
+  },
+  {
+    "name": "Under Development",
+    "description": "Lorum ipsum dolor sit amet.",
+    "icon": "IoIosCog"
   }
 ]
