@@ -1,17 +1,3 @@
-# create pages for:
-
-A) resources.json
-1. Getting test Ethereum
-2. Getting test Hydro
-3. What is a snowflake?
-4. The anatomy of the dappStore
-5. Best Practices
-
-B) snippets.json
-1. Setting Up Your Resolver
-2. Setting Your dApps Allowance
-3. Use Material Imports
-
 # slides.json
 
 A) Change images
