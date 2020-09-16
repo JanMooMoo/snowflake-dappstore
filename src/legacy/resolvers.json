@@ -13,5 +13,45 @@
 		"title": "Oxide",
 		"category": "Fintech",
 		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCD82371323Fda0f": {
+		"title": "test-dApp 1",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCD8E374323Fda0f": {
+		"title": "test-dApp 2",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCf8E371323Fda0f": {
+		"title": "test-dApp 3",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCD8E371323gda0f": {
+		"title": "test-dApp 4",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fha0f": {
+		"title": "test-dApp 5",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Fa1828cgD8E371323Fha0f": {
+		"title": "test-dApp 6",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8f03C3E06Fa1828cCD8E371323Fha0f": {
+		"title": "test-dApp 7",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"0x2930Cf9EE8E03C3E06Ja1828cCD8E371323Fha0f": {
+		"title": "test-dApp 8",
+		"category": "Under Development",
+		"price": "0"
 	}
 }
