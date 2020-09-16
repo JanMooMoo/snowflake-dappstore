@@ -1,8 +1,8 @@
-import Tester from './Tester';
+import FreelanceDapp from './FreelanceDapp';
 
 const requiredAllowance = '0';
 
 export {
-  Tester,
+  FreelanceDapp,
   requiredAllowance,
 };

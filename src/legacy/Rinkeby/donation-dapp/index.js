@@ -1,8 +1,8 @@
-import Tester from './Tester';
+import DonationsDapp from './DonationsDapp';
 
 const requiredAllowance = '0';
 
 export {
-  Tester,
+  DonationsDapp,
   requiredAllowance,
 };

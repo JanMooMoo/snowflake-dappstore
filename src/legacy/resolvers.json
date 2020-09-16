@@ -14,23 +14,43 @@
 		"category": "Fintech",
 		"price": "0"
 	},
-	"test-1": {
+	"dating-dapp": {
 		"title": "dateME",
 		"category": "Under Development",
 		"price": "0"
 	},
-	"test-2": {
+	"voting-dapp": {
 		"title": "Voteum",
 		"category": "Under Development",
 		"price": "0"
 	},
-	"test-3": {
-		"title": "test-dApp-3",
+	"donation-dapp": {
+		"title": "Donations dApp",
 		"category": "Under Development",
 		"price": "0"
 	},
-	"test-4": {
-		"title": "test-dApp-4",
+	"lottery-dapp": {
+		"title": "Lotteryx",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"crowdfunding-dapp": {
+		"title": "DCrowdFunding",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"password-dapp": {
+		"title": "dPasswords",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"giftcard-dapp": {
+		"title": "dGiftcards",
+		"category": "Under Development",
+		"price": "0"
+	},
+	"freelance-dapp": {
+		"title": "dFreelanceJobs",
 		"category": "Under Development",
 		"price": "0"
 	}

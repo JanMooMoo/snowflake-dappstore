@@ -1,8 +1,8 @@
-import Tester from './Tester';
+import CrowdFunding from './CrowdFunding';
 
 const requiredAllowance = '0';
 
 export {
-  Tester,
+  CrowdFunding,
   requiredAllowance,
 };
