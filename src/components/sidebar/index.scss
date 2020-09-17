@@ -1,7 +1,7 @@
 /* @define sidebar */
 
 .sidebar {
-  background-color: $snow-light-gray;
+  background-color: rgb(7, 34, 59)!important;
   padding-left: 0;
   padding-right: 0;
   position: absolute;
@@ -12,7 +12,7 @@
 }
 
 .sidebar__link {
-  color: #626262;
+  color: #fff;
   font-size: 17px;
   padding: 10px 0 10px 30px;
   margin-bottom: 10px;

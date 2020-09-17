@@ -77,7 +77,7 @@ function DappPreview(props) {
     if (!isAdded) {
       return (
         <Button color="outlined" size="sm" onClick={() => setIsPurchaseModalOpen(true)}>
-          Get
+          Explore
         </Button>
       );
     }

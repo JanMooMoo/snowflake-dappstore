@@ -6,6 +6,8 @@
 }
 
 .dapp-preview__body {
+  background: rgb(7, 34, 59)!important;
+  color: white;
   padding-left: 0;
   padding-right: 0;
 }
@@ -87,7 +89,8 @@
 }
 
 .card-deck .card {
-  margin-right: -5px;
+  // margin-right: -5px;
+  background: none;
 }
 
 .dapp-preview__image {
