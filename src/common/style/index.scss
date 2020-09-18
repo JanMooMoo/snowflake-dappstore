@@ -96,21 +96,25 @@ input[type=number]::-webkit-outer-spin-button {
 h1 {
   font-size: 24px;
   margin-bottom: 30px;
+  color: white!important;
 }
 
 h2 {
   font-size: 20px;
   margin-bottom: 15px;
+  color: white!important;
 }
 
 h3 {
   font-size: 16px;
   margin-bottom: 15px;
+  color: white!important;
 }
 
 h4 {
   font-size: 12px;
   margin-bottom: 15px;
+  color: white!important;
 }
 
 .navbar {
@@ -261,7 +265,7 @@ h4 {
 .btn-white {
   color: #395fff;
   background-color: $snow-white;
-  border-color: $snow-white;
+  border-color: none;
 }
 
 .btn-danger {
@@ -273,16 +277,16 @@ h4 {
 }
 
 .btn-outlined {
-  color: #395fff;
-  background: none;
-  border-color: #395fff;
+  color: white;
+  background: #264f9d;
+  border: none !important;
   border-width: 2px;
 }
 
 .btn-outlined:hover {
-  color: $snow-white;
-  background-color: #395fff;
-  border-color: #395fff;
+  // color: $snow-white;
+  // background-color: #133069;
+  // border-color: #133069;
 }
 
 .btn-outlined:focus, .btn-primary:focus, .btn-danger:focus, .btn-success:focus, .btn-secondary:focus {

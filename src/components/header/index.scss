@@ -4,9 +4,9 @@
   margin: 0;
   height: 85px auto;
   width: 100%;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  background-color: rgb(7, 34, 59)!important;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  background-color: rgb(6, 27, 47)!important;
 }
 
 .navbar-brand {
@@ -30,7 +30,7 @@
 .header__subtitle {
   font-size: 12px;
   font-weight: 600;
-  color: #fff;
+  color: #2ac0d5;
   padding: 5px 0 0 0px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .navbar-light .navbar-toggler {
-  color: white;
+  color: #2ac0d5;
 }
 
 .navbar .onboardingButton {
@@ -53,10 +53,14 @@
 
 .header__version {
   font-size: 10px;
-  color: #333;
+  color: #2ac0d5;
   position: absolute;
   top: 13px;
   left: 140px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #2ac0d5!important;
 }
 
 // .navbar-collapse {
