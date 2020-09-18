@@ -1,10 +1,9 @@
-[
-  {
+[{
     "image": "Remit.png",
     "link": ""
   },
   {
-    "image": "hydropay-top-slider.jpg",
+    "image": "submit-a-dapp.png",
     "link": ""
   },
   {
@@ -12,11 +11,16 @@
     "link": ""
   },
   {
-    "image": "dapp-november.jpg",
+    "image": "Snowflake.png",
     "link": ""
   },
   {
-    "image": "dapp-november-2.jpg",
+    "image": "dappstore.jpg",
+    "link": ""
+  },
+  {
+    "image": "submitdapp.png",
     "link": ""
   }
+
 ]
