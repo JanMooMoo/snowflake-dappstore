@@ -1,6 +1,5 @@
 {
   "name": "snowflake-dappstore",
-  "hompage": "https://dapps.projecthydro.org/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
