@@ -58,8 +58,8 @@ import {
 } from '../../legacy/Rinkeby/password-dapp/index';
 
 import {
-  VotingDapp,
-} from '../../legacy/Rinkeby/voting-dapp/index';
+  ElectionFactory,
+} from '../../legacy/Rinkeby/0x351dCAbdfCae2360682a69Fe7296687E13d6a460/index';
 
 function LegacyDapp(props) {
   const user = useContext(SnowflakeContext);
@@ -82,6 +82,10 @@ function LegacyDapp(props) {
 
     if (id === '0x2930Cf9EE8E03C3E06Fa1828cCD8E371323Fde0f') {
       return <Oxide ein={ein} />;
+    }
+
+    if (id === '0x351dCAbdfCae2360682a69Fe7296687E13d6a460') {
+      return <ElectionFactory ein={ein} />;
     }
 
     return <Status ein={ein} />;
