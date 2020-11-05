@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  * Handles a transaction and displays the result
  */

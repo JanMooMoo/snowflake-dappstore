@@ -1,10 +1,8 @@
 /* eslint-disable */
 
 import React, { useState} from 'react';
-
 import './style.css';
-import { useGenericContract, useNamedContract} from '../../common/hooks';
-import Typewriter from './Typewriter';
+import { useGenericContract} from '../../common/hooks';
 import { useWeb3Context } from 'web3-react';
 import FactoryAbi from './FactoryAbi';
 import VoteButton from './customButton/VoteButton';
@@ -21,7 +19,6 @@ export default function NewElection({}) {
   const [deadline, electionDeadline]  = useState('  ');
 
 
-  const [fontColor2, colorResult2]  = useState('')
   const dateTime = Date.now();
   const timestamp = Math.floor(dateTime / 1000);
   
@@ -49,7 +46,7 @@ export default function NewElection({}) {
                 <label className="newElectionLabel mt-2">Description of the new election.</label>
 					</div>
              
-                <div className="group mb-3">
+                <div className="group">
 					<div className="input-group-prepend">
                     <span className="input-group-texts">Days</span>
                     <select className="verify" onChange={e => electionDeadline(e.target.value)}>
@@ -69,7 +66,7 @@ export default function NewElection({}) {
                 style={{display:'inline-block',textAlign:'center'}} 
                 className="voteButton" 
                 method={()=>resolverContract.methods.createNewElection(parseInt(timestamp),title,description,parseInt(deadline))}/>
-               
+                 
                 </div>
                    
    </div>

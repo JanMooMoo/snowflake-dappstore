@@ -2,25 +2,17 @@
 
 import React, { useState,useEffect } from 'react';
 
-import Button from '@material-ui/core/Button';
-import { TextField, Typography} from '@material-ui/core'
-import Grid from '@material-ui/core/Grid';
-
+import {Typography} from '@material-ui/core'
 import ABI from './abi';
 import './style.css';
-import Votingregistration from './Images/Votingregistration.png';
-
-
 import { useGenericContract, useNamedContract,useAccountEffect } from '../../common/hooks';
 import TransactionButton from '../../common/TransactionButton';
 import CustomButton from './customButton/CustomButton';
 import { useWeb3Context } from 'web3-react';
-import { number } from 'prop-types';
 import ChartPage from './ChartPage';
 import VerificationPage from './VerificationPage';
 import ProfilePage from './ProfilePage';
 import ElectionFactory from './ElectionFactory';
-import Identicon from '../../../components/identicon';
 
 
 // import ShowCampaignStats from './ShowCampaignStats';
@@ -51,11 +43,7 @@ export default function VotingDapp({ ein,electionContract }) {
     resolverContract.methods.getMaxCandidates().call().then(Candidates => getTotalCandidates(Candidates));
     resolverContract.methods.aCandidate(ein).call().then(candidate => isCandidate(candidate));
     resolverContract.methods.aParticipant(ein).call().then(voter => isVoter(voter));
-    
-   // resolverContract.methods.vote('2265').call().then(status => setCurrentStatus(status));
-  //x = totalCandidates.length
-    //resolverContract.methods.candidates('2265').call().then(Candidates => getTotalCandidates(Candidates))
-    
+      
   })
 
    
@@ -81,34 +69,6 @@ export default function VotingDapp({ ein,electionContract }) {
     setPage(5)
    }
 
-  
-
-
-/*
-
- <Typography variant='h2' gutterBottom align="center" color="textPrimary">
-       
- {totalCandidates.map(candid =>(
-          <h1>
-            {candid}
-          </h1>
-        ))}
-      </Typography>
-
-      <div style={{display:"flex", textAlign:"center"}}>
-       <ul className="voting-navbar align-items-center">
-      <li className="nav-item ml-5">vote </li>
-      <li className="nav-item ml-5">Profile </li>
-      </ul>
-
-      <div className="einStatus" align="center">
-        
-      <p>EIN: {ein}</p>
-      <p className="role">{role}</p>
-      </div>
-      </div>
-        
-*/
 
 let becomeCandidate = <CustomButton 
 readyText='Register As Candidate' 
@@ -189,8 +149,6 @@ method={() => resolverContract.methods.becomeCandidate(ein)}/>
 
   }
 
-  
-
   return (
     <div className="background">
       
@@ -203,9 +161,6 @@ method={() => resolverContract.methods.becomeCandidate(ein)}/>
     
       </ul>
 
- 
-
-  
       
       <Typography variant='h2' gutterBottom  color="textPrimary">
       

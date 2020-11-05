@@ -7,6 +7,7 @@ import './style.css';
 import VoteButton from './customButton/VoteButton';
 import clientRaindrop from '../../../services/contracts/clientRaindrop';
 import CustomButton from './customButton/CustomButton';
+import ChartDeadline from './ChartDeadline';
 
 export default class ChartPage extends Component {
 
@@ -25,17 +26,23 @@ export default class ChartPage extends Component {
             pollTitle:'',
             maxNumber:'',
             loading:true,
+            unixTime:'',
+            deadline:''
             
         }
+        //Binds Option when selecting a candidate to vote
         this.handleChangeCandidate = this.handleChangeCandidate.bind(this)
 	}
 
 
 	componentDidMount(){
 	  this._isMounted = true;
-      this.loadBlockchain();
-	}
+      if(this.props.electionABI !== null & this.props.electionAddress!== null){
+          this.loadBlockchain();
+            }
+      }
 
+    //Connecting & getting Data from the blockchain.
     async loadBlockchain(){
        
         let ethereum= window.ethereum;
@@ -57,6 +64,7 @@ export default class ChartPage extends Component {
         const network = await web3.eth.net.getNetworkType();
         const accounts = await web3.eth.getAccounts();
         const blockNumber = await web3.eth.getBlockNumber();
+        
         if (this._isMounted){
         this.setState({blockNumber:blockNumber - 1});
         }
@@ -76,6 +84,12 @@ export default class ChartPage extends Component {
         const pollTitle = await votingContract.methods.snowflakeName().call();    
         this.setState({pollTitle:pollTitle})
 
+        const deadline = await votingContract.methods.getDeadline().call()
+            if (this._isMounted){
+                this.setState({unixTime:deadline.slice(0,10),
+                    deadline:new Date(parseInt(deadline.slice(0,10),10)*1000)});
+            }
+
         const maxCandidates = await votingContract.methods.getMaxCandidates().call();    
         this.setState({maxCandidates:maxCandidates[0],maxNumber:maxCandidates[1]})
 
@@ -88,8 +102,8 @@ export default class ChartPage extends Component {
             this.setState({userName:[...this.state.userName,userName[1]]});
            
         }
-        
-        votingContract.events.voted({fromBlock:this.state.blockNumber, toBlock:'latest'})
+         //listens to incoming votes in real time.
+        votingContract.events.voted({toBlock:'latest'})
         .on('data',async(log) => {  
    
         const getIndex = (element) => element == parseInt(log.returnValues._candidate);
@@ -101,8 +115,8 @@ export default class ChartPage extends Component {
             this.setState({votes})
             
         })
-
-        votingContract.events.becameCandidate({fromBlock:this.state.blockNumber, toBlock:'latest'})
+         //listens to added candidates in real time.
+        votingContract.events.becameCandidate({toBlock:'latest'})
         .on('data',async(event) => { 
             const newCandidate = await raindrop.methods.getDetails(parseInt(event.returnValues._candidateEIN)).call();
             this.setState({maxCandidates:[...this.state.maxCandidates,event.returnValues._candidateEIN],
@@ -115,7 +129,7 @@ export default class ChartPage extends Component {
             candidate:this.state.maxCandidates[0]},()=>console.log())
         }
 
- 
+    //Sets the value of candidates according to what the user has selected.
     handleChangeCandidate (event){
         let candidates = event.target.value;
         this.setState({candidate:candidates});      
@@ -141,11 +155,12 @@ export default class ChartPage extends Component {
         barThickness = 190;
         barfontsize = 16;
     }
-    else if(this.state.maxCandidates.length === 6){
+    else if(this.state.maxCandidates.length <= 6){
         barThickness = 170;
         barfontsize = 14;
     }
     
+    //Bar Char Data & Styling
     if(!this.state.loading)
     this.BarData = (canvas) => {
         const ctx = canvas.getContext("2d")
@@ -154,7 +169,7 @@ export default class ChartPage extends Component {
         gradient.addColorStop(1, 'rgb(86, 152, 206)');
      
         return {
-        //labels: ['hello','ch'],
+    
          labels: this.state.maxCandidates.map((ein,index)=>["EIN:"+ein+' - '+this.state.userName[index]]),
           datasets: [{
             label:'VOTES',
@@ -187,6 +202,10 @@ export default class ChartPage extends Component {
                     className="registrationButton"   
                     method={() => this.state.votingContract.methods.becomeCandidate(this.props.ein)}/>
 
+              <br/>
+                <ChartDeadline deadline={this.state.deadline} unixTime={this.state.unixTime}/>
+
+             
 
               <Bar className ="bars"
                 options={{
@@ -196,7 +215,7 @@ export default class ChartPage extends Component {
                 display: true,
                 position:"top",
                 text: this.state.pollTitle,
-                fontSize: 16,
+                fontSize: 18,
                 lineHeight:5.5,
                 padding:1,
                 fontColor:'white',                   
@@ -219,7 +238,9 @@ export default class ChartPage extends Component {
               
 			<div>
 				</div>
+
                 <div style={{display:'inline-block',textAlign:'center',width: '100%'}} className="divButtons">        
+                
                 {!this.state.loading &&<select className="selectOptions" onChange={this.handleChangeCandidate}>
                 {this.state.maxCandidates.map((candidate,index)=><option key={index} 
                     value={candidate} 

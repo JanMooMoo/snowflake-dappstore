@@ -62,7 +62,7 @@ function DappPreview(props) {
     logo: imgPlaceholder,
   };
 
-  if (legacy) {
+  if (legacy && resolversJson[id] !== undefined) {
     details.title = resolversJson[id].title;
     details.category = resolversJson[id].category;
     details.price = resolversJson[id].price;

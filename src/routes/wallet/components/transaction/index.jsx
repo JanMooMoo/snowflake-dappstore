@@ -74,9 +74,9 @@ function Transaction(props) {
         <IoIosAdd
           className="transaction__icon"
         />
-        <p className="transaction__type">
+        {resolvers[resolver] !== undefined && <p className="transaction__type">
           {`Purchased ${resolvers[resolver].title}`}
-        </p>
+        </p>}
       </div>
     );
   }
